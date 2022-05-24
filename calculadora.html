@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title></title>
+    <style type="text/css">
+        body{
+            background-color: beige;
+        }
+        h1{
+            color: rgb(149, 124, 124);
+            text-align: center;
+        }
+        .res{
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+            color: #1f1918;
+            font-size: 24px;
+        }
+        body section button{
+            background-color: #2f7b99;
+            border: none;
+            color: white;
+            padding: none;
+            min-width: 10%;
+            padding: 10px 20px;
+            font-size: 32px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 2px 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        body section button:hover{
+            background-color: #2b1881;
+        }
+    
+    </style>
+    </head>
+    
+    <body>
+        <header><h1>CALCULADORA</h1></header>
+        <section class="res">
+        <input type="number" id="n1">
+        <input type="number" id="n2">
+        <br><br><br>
+        <button id="btn">+</button>
+        <button id="btn2">-</button>
+        <button id="btn3">*</button>
+        <br>
+        <button id="btn4">/</button>
+        <button id="btn5">^</button>
+        <button id="btn6">exp</button>
+        <br>
+        <button id="btn7">√</button>
+        <button id="btn8">cos</button>
+        <button id="btn9">sen</button>
+        <br><br><br>
+        <h2>Resultado :</p>
+        <div id="resultado"></div>
+    
+        <script>
+            //  registra un evento 
+            var b=document.getElementById('btn');
+            b.addEventListener('click',suma);
+            var b=document.getElementById('btn2');
+            b.addEventListener('click',resta);
+            var b=document.getElementById('btn3');
+            b.addEventListener('click',multiplicacion);
+            var b=document.getElementById('btn4');
+            b.addEventListener('click',division);
+            var b=document.getElementById('btn5');
+            b.addEventListener('click',potencia);
+            var b=document.getElementById('btn6');
+            b.addEventListener('click',exponente);
+            var b=document.getElementById('btn7');
+            b.addEventListener('click',raiz);
+            var b=document.getElementById('btn8');
+            b.addEventListener('click',cos);
+            var b=document.getElementById('btn9');
+            b.addEventListener('click',sen);
+            var b=document.getElementById('btn10');
+            b.addEventListener('click',reset);
+         
+            
+            function suma() 
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=n1+n2
+                document.getElementById("resultado").innerHTML = n1+"+"+n2+"="+s
+            }
+            function resta() 
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=n1-n2
+                document.getElementById("resultado").innerHTML = n1+"-"+n2+"="+s
+            }
+    
+            function multiplicacion()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=n1*n2
+                document.getElementById("resultado").innerHTML = n1+"*"+n2+"="+s
+            }
+    
+    
+            function division()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=n1/n2
+                document.getElementById("resultado").innerHTML = n1+"/"+n2+"="+s
+            }
+    
+            function potencia()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=Math.pow(n1,n2)
+                document.getElementById("resultado").innerHTML = n1+"^"+n2+"="+s
+            }
+            
+            function exponente()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=Math.exp(n1)
+                var s2=Math.exp(n2)
+                document.getElementById("resultado").innerHTML = "EXP "+n1+"="+s+"<br>"+"EXP "+n2+"="+s2
+            }
+    
+            function raiz()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=Math.sqrt(n1)
+                var s2=Math.sqrt(n2)
+                document.getElementById("resultado").innerHTML = "√"+n1+"="+s+"<br>"+"√"+n2+"="+s2
+                
+            }
+           
+            function cos()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=Math.cos(n1)
+                var s2=Math.cos(n2)
+                document.getElementById("resultado").innerHTML = "cos"+n1+"="+s+"<br>"+"cos"+n2+"="+s2
+            }
+    
+            function sen()
+            {
+                var n1=parseInt(document.getElementById('n1').value);
+                var n2=parseInt(document.getElementById('n2').value);
+                var s=Math.sin(n1)
+                var s2=Math.sin(n2)
+                document.getElementById("resultado").innerHTML = "sin"+n1+"="+s+"<br>"+"sin"+n2+"="+s2
+                
+            }
+           
+    
+        </script>
+    </section>
+</body>
+</html>
